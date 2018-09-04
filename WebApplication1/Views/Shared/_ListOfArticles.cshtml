@@ -1,0 +1,8 @@
+﻿@model List<Datamanager_Mockup.Models.VM_artikel>
+
+@foreach (var item in Model)
+{
+
+    @Html.Partial("_SingleArticle", item)
+
+}
