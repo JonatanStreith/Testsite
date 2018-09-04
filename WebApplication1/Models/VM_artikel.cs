@@ -13,6 +13,6 @@ namespace Datamanager_Mockup.Models
         int Characteristics;
         int Stock;
         int OptimalStock;
-        int OrderRow;
+        int OrderrRow;
     }
 }
