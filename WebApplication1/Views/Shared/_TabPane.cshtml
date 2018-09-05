@@ -1,0 +1,100 @@
+﻿@model Datamanager_Mockup.Models.VM_artikel
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" href="#newarticle" role="tab" data-toggle="tab">Ny artikel</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#editarticle" role="tab" data-toggle="tab">Ändra artikel</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#functions" role="tab" data-toggle="tab">Funktioner</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#Artikelinfo" role="tab" data-toggle="tab">Artikelinfo</a>
+    </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content tiny">
+
+    <div role="tabpanel" class="tab-pane in active" id="newarticle">
+
+        @using (Html.BeginForm("AddArticle", "Home", FormMethod.Post))
+        {
+            <label for="filter"> Artikelnummer:</label>
+            <input type="text" class="form-control" id="Artnr" name="Artnr">
+
+            <label for="filter">Beskrivning:</label>
+            <input type="text" class="form-control" id="Desc" name="Desc">
+
+            <label for="filter">Kategori:</label>
+            <input type="text" class="form-control" id="Category" name="Category">
+
+
+            <br />
+
+            <input type="submit" class="btn btn-basic" value="Lägg till">
+
+            <input type="submit" class="btn btn-basic" value="Rensa">
+
+            <label for="case_sensitive">Lägg till som produkt </label>
+            <input type="checkbox" id="autoProduct" value="true" name="autoProduct" />
+            <input type="hidden" value="false" name="autoProduct">
+
+        }
+    </div>
+
+
+    <div role="tabpanel" class="tab-pane in active" id="editarticle">
+
+        @using (Html.BeginForm("EditArticle", "Home", FormMethod.Post))
+        {
+            <label for="filter"> Artikelnummer:</label>
+            <input type="text" class="form-control" id="Artnr" name="Artnr">
+
+            <label for="filter">Beskrivning:</label>
+            <input type="text" class="form-control" id="Desc" name="Desc">
+
+            <label for="filter">Kategori:</label>
+            <input type="text" class="form-control" id="Category" name="Category">
+
+
+            <br />
+
+            <input type="submit" class="btn btn-basic" value="Ändra">
+
+            <input type="submit" class="btn btn-basic" value="Rensa">
+
+
+        }
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="functions">
+
+        <input type="submit" class="btn btn-basic m-1" value="Skapa produkt av valda artiklar">
+        <input type="submit" class="btn btn-basic m-1" value="Radera valda artiklar">
+        <input type="submit" class="btn btn-basic m-1" value="Räkna om lagersaldo (valda)">
+        <input type="submit" class="btn btn-basic m-1" value="Räkna om lagersaldo (alla)">
+        <input type="submit" class="btn btn-basic m-1" value="Ändra lagersaldo">
+
+    </div>
+
+
+    <div role="tabpanel" class="tab-pane" id="Artikelinfo">
+
+
+        <p>Artikelnummer: @Model.ArticleNumber</p>
+        <p>Beskrivning: @Model.Description</p>
+        <p>I lager: @Model.Stock</p>
+        <p>Kategori: @Model.Category</p>
+
+
+
+
+    </div>
+
+
+
+
+</div>

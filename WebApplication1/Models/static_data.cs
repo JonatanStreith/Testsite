@@ -37,5 +37,12 @@ namespace Datamanager_Mockup.Models
             return artikellista;
         }
 
+        public static VM_artikel ReturnArticle(string ArticleNumber)
+        {
+            VM_artikel Article = static_data.builddata().Find(x => x.ArticleNumber == ArticleNumber);
+
+            return Article;
+        }
+
     }
 }

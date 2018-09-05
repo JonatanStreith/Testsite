@@ -44,5 +44,32 @@ namespace Datamanager_Mockup.Controllers
 
             return View();
         }
+
+
+
+
+
+
+
+
+        public ActionResult DisplayArticleInfo(string ArticleNumber)
+        {
+
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_TabPane", static_data.ReturnArticle(ArticleNumber));
+            }
+            else
+            {
+                return View("Index");
+            }
+
+        }
+
+
+
+
+
     }
 }

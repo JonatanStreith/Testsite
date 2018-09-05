@@ -22,3 +22,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.tiny {
+    font-size: 0.7rem;
+}
+
+.form-control {
+    height:25px;
+    font-size:0.7rem;
+}

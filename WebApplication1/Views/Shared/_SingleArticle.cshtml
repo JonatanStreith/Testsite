@@ -4,10 +4,60 @@
 
 <div class="d-flex">
 
-    <div class="col-lg-2 border">@Model.ArticleNumber</div>
-    <div class="col-lg-9 border">@Model.Description</div>
-    <div class="col-lg-1 border">@Model.Stock</div>
+    <div class="col-lg-2 tiny border">
+
+
+        @Ajax.ActionLink(Model.ArticleNumber,
+                     "DisplayArticleInfo",
+                     "Home",
+                     new { ArticleNumber = Model.ArticleNumber },
+                     new AjaxOptions { HttpMethod = "GET",
+                     InsertionMode = InsertionMode.Replace,
+                     UpdateTargetId = "TabField"
+                     })
+
+
+        
+
+
+
+
+    </div>
+    <div class="col-lg-9 tiny border">@Model.Description</div>
+    <div class="col-lg-1 tiny border">@Model.Stock</div>
 
 </div>
+
+
+
+
+
+@*
+<div class="d-flex">
+
+    <div class="col-lg-2 tiny border">@Model.ArticleNumber</div>
+    <div class="col-lg-9 tiny border">@Model.Description</div>
+    <div class="col-lg-1 tiny border">@Model.Stock</div>
+
+</div>
+    *@
+
+
+
+@*
+
+    @Ajax.ActionLink("Show",
+                 "Show",
+                 null,
+                 new AjaxOptions { HttpMethod = "GET",
+                 InsertionMode = InsertionMode.Replace,
+                 UpdateTargetId = "dialog_window_id",
+                 OnComplete = "your_js_function();" })
+
+
+
+*@
+
+
 
 
