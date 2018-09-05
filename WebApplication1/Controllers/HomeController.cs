@@ -11,9 +11,13 @@ namespace Datamanager_Mockup.Controllers
     {
         public ActionResult Index()
         {
-             
+            
+            //If not logged in, go to login page.
+            //Else redirect to Artiklar.
 
-            return View();
+
+            return RedirectToAction("Artiklar");
+            //return View();
         }
 
         public ActionResult Artiklar()
@@ -21,6 +25,7 @@ namespace Datamanager_Mockup.Controllers
 
             return View(static_data.builddata());
         }
+
         public ActionResult Produkter()
         {
             return View();

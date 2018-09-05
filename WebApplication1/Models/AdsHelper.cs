@@ -8,7 +8,7 @@ using DunlyStad_Web.Code;
 
 using Advantage.Data.Provider;
 
-namespace DunlyStad_Web
+namespace Datamanager_Mockup.Models
 {
     public static class AdsHelper
     {

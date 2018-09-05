@@ -156,6 +156,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdsHelper.cs" />
+    <Compile Include="Models\Advantage_Mapping.cs" />
+    <Compile Include="Models\BackofficeLoginFilter.cs" />
+    <Compile Include="Models\SessionHelper.cs" />
     <Compile Include="Models\static_data.cs" />
     <Compile Include="Models\VM_artikel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

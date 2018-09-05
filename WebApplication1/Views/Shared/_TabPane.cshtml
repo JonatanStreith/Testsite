@@ -2,7 +2,10 @@
 
 <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
-        <a class="nav-link active" href="#newarticle" role="tab" data-toggle="tab">Ny artikel</a>
+        <a class="nav-link active" href="#Artikelinfo" role="tab" data-toggle="tab">Artikelinfo</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#newarticle" role="tab" data-toggle="tab">Ny artikel</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#editarticle" role="tab" data-toggle="tab">Ändra artikel</a>
@@ -10,15 +13,24 @@
     <li class="nav-item">
         <a class="nav-link" href="#functions" role="tab" data-toggle="tab">Funktioner</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#Artikelinfo" role="tab" data-toggle="tab">Artikelinfo</a>
-    </li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content tiny">
 
-    <div role="tabpanel" class="tab-pane in active" id="newarticle">
+
+    <div role="tabpanel" class="tab-pane active" id="Artikelinfo">
+
+
+        <p>Artikelnummer: @Model.ArticleNumber</p>
+        <p>Beskrivning: @Model.Description</p>
+        <p>I lager: @Model.Stock</p>
+        <p>Kategori: @Model.Category</p>
+
+    </div>
+
+
+    <div role="tabpanel" class="tab-pane" id="newarticle">
 
         @using (Html.BeginForm("AddArticle", "Home", FormMethod.Post))
         {
@@ -46,18 +58,18 @@
     </div>
 
 
-    <div role="tabpanel" class="tab-pane in active" id="editarticle">
+    <div role="tabpanel" class="tab-pane" id="editarticle">
 
         @using (Html.BeginForm("EditArticle", "Home", FormMethod.Post))
         {
             <label for="filter"> Artikelnummer:</label>
-            <input type="text" class="form-control" id="Artnr" name="Artnr">
+            <input type="text" class="form-control" id="Artnr" value="@Model.ArticleNumber" name="Artnr">
 
             <label for="filter">Beskrivning:</label>
-            <input type="text" class="form-control" id="Desc" name="Desc">
+            <input type="text" class="form-control" id="Desc" value="@Model.Description" name="Desc">
 
             <label for="filter">Kategori:</label>
-            <input type="text" class="form-control" id="Category" name="Category">
+            <input type="text" class="form-control" id="Category" value="@Model.Category" name="Category">
 
 
             <br />
@@ -81,18 +93,6 @@
     </div>
 
 
-    <div role="tabpanel" class="tab-pane" id="Artikelinfo">
-
-
-        <p>Artikelnummer: @Model.ArticleNumber</p>
-        <p>Beskrivning: @Model.Description</p>
-        <p>I lager: @Model.Stock</p>
-        <p>Kategori: @Model.Category</p>
-
-
-
-
-    </div>
 
 
 

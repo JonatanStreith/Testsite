@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using DunlyStad_Web.Controllers;
 using DunlyStad_Web.Code.Helpers;
 
-namespace DunlyStad_Web.Code.Filters
+namespace Datamanager_Mockup.Models
 {
     public class BackofficeLoginFilter : ActionFilterAttribute, IActionFilter
     {

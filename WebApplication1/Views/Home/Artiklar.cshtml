@@ -17,19 +17,26 @@
 
     <div class="col-4 border" style="height:800px">
 
+        <div class="form-group d-flex">
+            <select class="form-control p-1 m-1" id="filtertype">
+                <option class="tiny">Artikelnummer</option>
+                <option class="tiny">Artikelnyckel</option>
+                <option class="tiny">Beskrivning</option>
+                <option class="tiny">Lagersaldo</option>
+            </select>
 
+            <input type="text" class="form-control p-1 m-1" id="filtervalue" name="filtervalue" placeholder="Söksträng">
 
-        <p class="text-danger">Filterfunktioner här - TBA</p>
-        <br /><br /><br /><br /><br />
+        </div>        
 
         <hr />
 
 
         <div class="d-flex pt-1">
 
-            <div class="col-lg-2 tiny border">Artikelnummer</div>
-            <div class="col-lg-9 tiny border">Beskrivning</div>
-            <div class="col-lg-1 tiny border">Lagersaldo</div>
+            <div class="col-lg-2 tiny border px-1 bg-light">Artikelnummer</div>
+            <div class="col-lg-9 tiny border px-1 bg-light">Beskrivning</div>
+            <div class="col-lg-1 tiny border px-1 bg-light">L.saldo</div>
 
         </div>
 
@@ -59,11 +66,11 @@
 
             </ul>
         }
-    
+
     </div>
 
 
-    <div class="col-8" id="TabField">
+    <div class="col-8 border" id="TabField">
 
 
         @Html.Partial("_TabPane", Model.FirstOrDefault())

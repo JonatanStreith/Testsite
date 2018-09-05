@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace DunlyStad_Web
+namespace Datamanager_Mockup.Models
 {
     public class SessionHelper
     {
